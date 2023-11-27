@@ -1,0 +1,115 @@
+@mixin textStyle{
+  > .row:first-child {
+    > div {
+      padding-bottom: 10px;
+      > div {
+        > div {
+          img {
+            width: 25px;
+            height: 35px;
+          }
+          h2 {
+            font-weight: bolder;
+          }
+        }
+        button{
+          padding: 0 40px;
+          @include breakpoints(mobile){
+            padding: 6px 40px;
+          }
+        }
+      }
+    }
+  }
+}
+@mixin carouselStyle{
+  .carousel-control-prev {
+    left: 0;
+    top: -38px;
+    height: 35px;
+    width: 35px;
+    opacity: 1 !important;
+    .carousel-control-prev-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .carousel-control-next {
+    right: 80%;
+    top: -38px;
+    height: 35px;
+    width: 35px;
+    opacity: 1 !important;
+    .carousel-control-next-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@mixin selectStyle{
+  .selectStyle {
+    width: 48%;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: relative;
+    cursor: pointer;
+    input[type='radio'] {
+      appearance: none;
+    }
+    span:nth-child(2) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    input:checked + span:nth-child(2) {
+      border: 1px solid $red;
+      border-radius: 5px;
+    }
+    input:checked ~ label:before {
+      border: 1px solid $red !important;
+    }
+    input:checked ~ label:after {
+      content: '';
+      position: absolute;
+      background-color: $red;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      right: -36px;
+      top: 6.8px;
+    }
+    label:nth-child(3) {
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 50%;
+        right: -39px;
+        top: 4px;
+      }
+    }
+    span:nth-child(4) {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: #888888;
+        width: 1.5px;
+        height: 19px;
+        top: -9px;
+      }
+    }
+    span:last-child {
+      font-size: 22px;
+    }
+  }
+}
